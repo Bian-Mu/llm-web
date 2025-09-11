@@ -30,7 +30,7 @@ const SendForm: React.FC = () => {
             setFile(data.text)
             // console.log(data.text)
         } catch (error) {
-            console.log("文件有误")
+            console.log("文件有误", error)
         }
     }
 

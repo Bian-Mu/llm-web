@@ -14,7 +14,7 @@ const ConversationList: React.FC = () => {
             );
             setActiveConversation(maxIdConversation.id);
         }
-    }, []);
+    });
 
     const sortedConversations = [...conversations].sort((a, b) => Number(b.id) - Number(a.id))
     return (

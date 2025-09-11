@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     try {
         const text = await handleFile(buffer, file.type, file.name);
         return NextResponse.json({ text });
-    } catch (err: any) {
-        return NextResponse.json({ error: err.message }, { status: 500 });
+    } catch (err) {
+        return NextResponse.json({ err }, { status: 500 });
     }
 }
