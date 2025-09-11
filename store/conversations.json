@@ -1,0 +1,8 @@
+[
+    {
+        "id": "1-1",
+        "text": "你好，项目进展如何？",
+        "sender": "user",
+        "timeStamp": "new Date()"
+    }
+]
