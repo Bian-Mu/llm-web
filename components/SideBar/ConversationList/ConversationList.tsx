@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from 'react';
-import useConversationStore from '../../store/conversations';
+import useConversationStore from '../../../store/conversations';
 
 
 const ConversationList: React.FC = () => {

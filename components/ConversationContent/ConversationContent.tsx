@@ -10,7 +10,7 @@ const ConversationContent: React.FC = () => {
         <>
             <div className="font-bold text-2xl">{activeConversation?.title.substring(0, 15)}</div>
             <hr />
-            <div className="flex flex-col gap-4 mr-10 my-2">
+            <div className="flex flex-col gap-4 mr-1 md:mr-2 my-2">
                 {activeConversation?.messages.map((message) => (
                     <ul key={message.id} className={message.sender === "bot" ? basicCss + "bg-background text-foreground" : basicCss + "self-end"} >
                         {message.text}

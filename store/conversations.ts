@@ -24,6 +24,8 @@ interface ConversationStore {
     setConversationTitle: (id: Conversation["id"], title: Conversation["title"]) => void
     addConversation: (title: Conversation["title"]) => void
     addMessage: (id: Conversation["id"], sender: Message["sender"], text: Message["text"]) => void
+    model: string,
+    setModel: (model: string) => void
 }
 
 
@@ -37,17 +39,7 @@ const useConversationStore = create<ConversationStore>((set) => ({
             title: '工作讨论',
             messages: [
                 { id: '1-1', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-2', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
-                { id: '1-3', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-4', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
-                { id: '1-5', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-6', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
-                { id: '1-7', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-8', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
-                { id: '1-9', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-10', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
-                { id: '1-11', text: '你好，项目进展如何？', sender: 'user', timeStamp: new Date() },
-                { id: '1-12', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() },
+                { id: '1-2', text: '一切顺利，已经完成了80%', sender: 'bot', timeStamp: new Date() }
             ],
             createdTime: new Date(),
         },
@@ -111,7 +103,9 @@ const useConversationStore = create<ConversationStore>((set) => ({
                     ]
                 } : conv
             )
-        }))
+        })),
+    model: "default",
+    setModel: (model: string) => set({ model: model })
 }));
 
 export default useConversationStore

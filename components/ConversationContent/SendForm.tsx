@@ -67,12 +67,12 @@ const SendForm: React.FC = () => {
 
     return (
         <>
-            <form onSubmit={handleSend} className="flex flex-row justify-self-center mt-4 min-h-1/9  border-[0.3vh] border-background my-3 w-4/5">
-                <textarea ref={questionRef} placeholder="对话框" className="px-2 py-1 basis-9/10">
+            <form onSubmit={handleSend} className=" flex flex-row justify-self-center mt-3 mx-5 md:mt-4 min-h-1/9  border-[0.3vh] border-background md:my-3 md:w-4/5">
+                <textarea ref={questionRef} placeholder="对话框" className="px-2 py-1 basis-7/10 md:basis-9/10">
                 </textarea>
-                <div className="flex flex-col justify-center basis-1/10 gap-1">
+                <div className="flex flex-col justify-center basis-3/10 md:basis-1/10 gap-1">
                     <label className={(file ? " cursor-not-allowed " : " cursor-pointer ") + `mx-2 border-[0.3vh] font-bold bg-foreground text-background text-center`} >
-                        {file ? "已上传" : "上传"}
+                        {file ? "就绪" : "上传"}
                         <input disabled={!!file} type="file" accept=".docx,.txt" onChange={handleFileUpload} className="hidden" />
                     </label>
                     <button type="submit" className="mx-2 border-[0.3vh] font-bold bg-foreground text-background cursor-pointer">
