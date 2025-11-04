@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import AddConversationButton from "./ConversationList/AddConversationButton"
 import ConversationList from "./ConversationList/ConversationList"
-
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 
 const SideBar: React.FC = () => {
 
@@ -40,13 +40,13 @@ const SideBar: React.FC = () => {
                         过去对话
                     </span >
                     <div className="basis-4/14"></div>
-                    <span className="text-center rounded-xl basis-1/14 text-xl font-bold bg-foreground text-background ">
+                    <span className="text-center  basis-1/14 text-xl font-bold bg-foreground text-background ">
                         <AddConversationButton />
 
                     </span>
                     <div className="basis-1/14"></div>
-                    <button onClick={onClick} className="text-center rounded-xl basis-1/14 text-xl font-bold bg-foreground text-background">
-                        {`<<`}
+                    <button onClick={onClick} className="cursor-pointer text-center  basis-1/14 text-xl font-bold bg-foreground text-background">
+                        <MenuFoldOutlined />
                     </button>
                 </div>
                 <hr className="my-2 w-full" />
@@ -58,8 +58,8 @@ const SideBar: React.FC = () => {
 
         </div>) : (
             <div>
-                <button onClick={onClick} className="basis-1/5 text-center rounded-xl  text-xl font-bold bg-foreground text-background">
-                    {`>>`}
+                <button onClick={onClick} className="cursor-pointer basis-1/5 text-center text-xl font-bold bg-foreground text-background">
+                    <MenuUnfoldOutlined />
                 </button>
             </div>
         )

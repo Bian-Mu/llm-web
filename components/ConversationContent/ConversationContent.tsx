@@ -1,5 +1,6 @@
 "use client";
 import useConversationStore from "@/store/conversations"
+import ReactMarkdown from "react-markdown";
 
 const basicCss = " border-3 rounded-xl p-2 size-fit "
 
@@ -13,7 +14,9 @@ const ConversationContent: React.FC = () => {
             <div className="flex flex-col gap-4 mr-1 md:mr-2 my-2">
                 {activeConversation?.messages.map((message) => (
                     <ul key={message.id} className={message.sender === "bot" ? basicCss + "bg-background text-foreground" : basicCss + "self-end"} >
-                        {message.text}
+                        <ReactMarkdown>
+                            {message.text}
+                        </ReactMarkdown>
                     </ul>
                 ))}
                 {loading ? <div className={basicCss + " bg-background text-foreground"}>正在加载...</div> : ""}

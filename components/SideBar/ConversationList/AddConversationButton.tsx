@@ -1,6 +1,7 @@
 "use client";
 
 import useConversationStore from "@/store/conversations";
+import { PlusOutlined } from '@ant-design/icons'
 
 const AddConversationButton: React.FC = () => {
     const { addConversation, conversations } = useConversationStore()
@@ -11,8 +12,8 @@ const AddConversationButton: React.FC = () => {
     }
 
     return (
-        <button id="new-cv-button cursor-pointer" onClick={onClick}>
-            +
+        <button id="new-cv-button" className="cursor-pointer" onClick={onClick}>
+            <PlusOutlined />
         </button>
     )
 }
