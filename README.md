@@ -8,3 +8,8 @@
 2. React、Typescript：主要开发框架与语言
 3. tailwindcss：高效设计实现页面样式
 4. zustand：实现全局状态管理
+
+```
+docker start llm-web
+
+```
